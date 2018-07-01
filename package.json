@@ -1,0 +1,23 @@
+{
+  "name": "tailwindcss-image-rendering",
+  "version": "0.1.0",
+  "description": "Describe what this plugin does",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hacknug/tailwindcss-image-rendering.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "tailwind css",
+    "tailwindcss-plugin",
+    "plugin"
+  ],
+  "author": "Nestor Vera <nestorvera@me.com> (https://nestor.rip)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hacknug/tailwindcss-image-rendering/issues"
+  },
+  "homepage": "https://github.com/hacknug/tailwindcss-image-rendering#readme"
+}
