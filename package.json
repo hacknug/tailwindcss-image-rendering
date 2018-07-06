@@ -1,7 +1,7 @@
 {
   "name": "tailwindcss-image-rendering",
   "version": "0.1.0",
-  "description": "Describe what this plugin does",
+  "description": "Image-rendering utilities for Tailwind CSS.",
   "main": "index.js",
   "repository": {
     "type": "git",
