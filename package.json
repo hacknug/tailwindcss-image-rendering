@@ -2,22 +2,40 @@
   "name": "tailwindcss-image-rendering",
   "version": "0.1.0",
   "description": "Image-rendering utilities for Tailwind CSS.",
-  "main": "index.js",
+  "keywords": [
+    "plugin",
+    "tailwind",
+    "tailwind css",
+    "tailwindcss",
+    "tailwindcss-plugin"
+  ],
+  "homepage": "https://github.com/hacknug/tailwindcss-image-rendering#readme",
+  "bugs": {
+    "url": "https://github.com/hacknug/tailwindcss-image-rendering/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hacknug/tailwindcss-image-rendering.git"
   },
-  "keywords": [
-    "tailwind",
-    "tailwindcss",
-    "tailwind css",
-    "tailwindcss-plugin",
-    "plugin"
-  ],
-  "author": "Nestor Vera <nestorvera@me.com> (https://nestor.rip)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hacknug/tailwindcss-image-rendering/issues"
+  "author": {
+    "name": "Nestor Vera",
+    "email": "nestorvera@me.com",
+    "url": "https://nestor.rip/"
   },
-  "homepage": "https://github.com/hacknug/tailwindcss-image-rendering#readme"
+  "main": "index.js",
+  "scripts": {
+    "dev": "jest --watchAll",
+    "test": "jest"
+  },
+  "dependencies": {
+    "flat": "^4.1.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "jest-matcher-css": "^1.0.3",
+    "postcss": "^7.0.16",
+    "tailwindcss": "^1.0.1"
+  }
 }
