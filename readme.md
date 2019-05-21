@@ -20,7 +20,16 @@ yarn add -D tailwindcss-image-rendering
 ## Usage
 
 ```js
-require('tailwindcss-image-rendering')(['responsive'])
+// tailwind.config.js
+{
+  theme: {},  // no options to configure
+  variants: { // all the following default to ['responsive']
+    imageRendering: ['responsive'],
+  },
+  plugins: [
+    require('tailwindcss-image-rendering'), // no options to configure
+  ],
+}
 ```
 
 ```css
