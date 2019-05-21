@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-image-rendering",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Image-rendering utilities for Tailwind CSS.",
   "keywords": [
     "plugin",
