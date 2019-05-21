@@ -7,6 +7,9 @@ This plugin adds utilities to use image-rendering with Tailwind CSS.
 Add this plugin to your project:
 
 ```bash
+# Install using pnpm
+pnpm install --save-dev tailwindcss-image-rendering
+
 # Install using npm
 npm install --save-dev tailwindcss-image-rendering
 
