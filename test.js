@@ -25,14 +25,14 @@ expect.extend({ toMatchCss: require('jest-matcher-css') })
 test('generates default utilities and responsive variants', () => {
   const testConfig = {}
   const expectedCss = `
-    .bg-rendering-auto { image-rendering: auto }
-    .bg-rendering-crisp-edges { image-rendering: crisp-edges }
-    .bg-rendering-pixelated { image-rendering: pixelated }
+    .rendering-auto { image-rendering: auto }
+    .rendering-crisp-edges { image-rendering: crisp-edges }
+    .rendering-pixelated { image-rendering: pixelated }
 
     @media (min-width: 640px) {
-      .sm\\:bg-rendering-auto { image-rendering: auto }
-      .sm\\:bg-rendering-crisp-edges { image-rendering: crisp-edges }
-      .sm\\:bg-rendering-pixelated { image-rendering: pixelated }
+      .sm\\:rendering-auto { image-rendering: auto }
+      .sm\\:rendering-crisp-edges { image-rendering: crisp-edges }
+      .sm\\:rendering-pixelated { image-rendering: pixelated }
     }
   `
 
@@ -46,13 +46,13 @@ test('variants can be customized', () => {
     },
   }
   const expectedCss = `
-    .bg-rendering-auto { image-rendering: auto }
-    .bg-rendering-crisp-edges { image-rendering: crisp-edges }
-    .bg-rendering-pixelated { image-rendering: pixelated }
+    .rendering-auto { image-rendering: auto }
+    .rendering-crisp-edges { image-rendering: crisp-edges }
+    .rendering-pixelated { image-rendering: pixelated }
 
-    .hover\\:bg-rendering-auto:hover { image-rendering: auto }
-    .hover\\:bg-rendering-crisp-edges:hover { image-rendering: crisp-edges }
-    .hover\\:bg-rendering-pixelated:hover { image-rendering: pixelated }
+    .hover\\:rendering-auto:hover { image-rendering: auto }
+    .hover\\:rendering-crisp-edges:hover { image-rendering: crisp-edges }
+    .hover\\:rendering-pixelated:hover { image-rendering: pixelated }
   `
 
   return generatePluginCss(testConfig).then(css => expect(css).toMatchCss(expectedCss))

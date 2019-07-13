@@ -1,14 +1,25 @@
 var _ = require('lodash')
 var flatten = require('flat')
 
+
+const FLATTEN_CONFIG = { delimiter: '-', maxDepth: 2 }
+const getName = name => name.split('-default').join('')
+
+
 module.exports = function () {
   return function ({
     addUtilities, addComponents, addBase, addVariant,
     e, prefix, theme, variants, config,
   }) {
-    const buildObjectFromTheme = themeKey => {
+    const buildObjectFromTheme = (themeKey, ...fallbackKeys) => {
       const buildObject = ([ modifier, value ]) => [ modifier, { [themeKey]: value } ]
-      const themeEntries = Object.entries(theme(themeKey, {})).map(entry => buildObject(entry))
+      const getThemeSettings = (themeKey, fallbackKeys) => {
+        return theme(themeKey, false) || getThemeSettings([themeKey, ...fallbackKeys] = fallbackKeys)
+      }
+      const themeEntries = Object
+        .entries(flatten(getThemeSettings(themeKey, fallbackKeys), FLATTEN_CONFIG))
+        .map(entry => buildObject(entry))
+
       return _.fromPairs(themeEntries)
     }
 
@@ -25,13 +36,14 @@ module.exports = function () {
     Object.entries(pluginUtilities)
       .filter(([ modifier, values ]) => !_.isEmpty(values))
       .forEach(([ modifier, values ]) => {
+        const className = _.kebabCase(modifier)
         const variantName = Object.keys(Object.entries(values)[0][1])[0]
-        const utilities = flatten(
-          { [`.${e(`bg-${modifier}`)}`]: values },
-          { delimiter: '-', maxDepth: 2 },
-        )
+        const utilities = flatten({ [`.${e(`${className}`)}`]: values }, FLATTEN_CONFIG)
 
-        addUtilities(utilities, variants(variantName, ['responsive']))
+        addUtilities(
+          _.mapKeys(utilities, (value, key) => getName(key)),
+          variants(variantName, ['responsive'])
+        )
       })
   }
 }
