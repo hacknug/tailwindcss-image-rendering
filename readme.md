@@ -1,6 +1,6 @@
 # Tailwind CSS Image Rendering Plugin
 
-This plugin adds utilities to use image-rendering with Tailwind CSS.
+This plugin adds utilities to use `image-rendering` with Tailwind CSS.
 
 ## Installation
 
