@@ -27,7 +27,7 @@ yarn add -D tailwindcss-image-rendering
     imageRendering: ['responsive'],
   },
   plugins: [
-    require('tailwindcss-image-rendering'), // no options to configure
+    require('tailwindcss-image-rendering')(), // no options to configure
   ],
 }
 ```
