@@ -35,7 +35,7 @@
   "devDependencies": {
     "jest": "^26.5.3",
     "jest-matcher-css": "^1.0.3",
-    "postcss": "^7.0.16",
+    "postcss": "^8.1.9",
     "tailwindcss": "^1.0.1"
   }
 }
